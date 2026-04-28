@@ -54,13 +54,4 @@ Because community crises happen on the ground, mobile accessibility is our immed
 * **📍 Live GPS Tracking:** Allowing users to share live locations during emergency rescues to guide responders directly to them.
 * **📶 Offline-First Capabilities:** Enabling users to draft alert requests even when cellular networks go down during disasters, which will automatically sync the moment a signal is restored.
 
----
 
-## 🚀 How to Run Locally
-
-Follow these steps to get the development environment running on your machine.
-
-### 1. Clone the repository
-```bash
-git clone [https://github.com/YourUsername/ImpactHub.git](https://github.com/YourUsername/ImpactHub.git)
-cd ImpactHub

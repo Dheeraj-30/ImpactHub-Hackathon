@@ -18,7 +18,7 @@ const ConnectNearbyModal = ({ isOpen, onClose }) => {
 
     try {
       const response = await axios.get(
-        `http://localhost:4000/api/ngoDetail/getNgoDetail?location=${searchLocation}`,
+        `https://impacthub-hackathon.onrender.com/api/ngoDetail/getNgoDetail?location=${searchLocation}`,
       );
 
       if (response.data.success) {

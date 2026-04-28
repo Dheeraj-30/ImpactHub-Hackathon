@@ -20,7 +20,7 @@ const Auth = ({ setToken }) => {
   const onSubmitHandler = async (event) => {
     event.preventDefault();
 
-    let newUrl = "http://localhost:4000/api/user";
+    let newUrl = "https://impacthub-hackathon.onrender.com/api/user";
     if (currentState === "Login") {
       newUrl += "/login";
     } else {

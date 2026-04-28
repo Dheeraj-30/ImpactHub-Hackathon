@@ -23,7 +23,7 @@ const Dashboard = ({ refreshKey }) => {
         const token = localStorage.getItem("token");
 
         const response = await axios.get(
-          "http://localhost:4000/api/RaiseQuest/getAllRequest",
+          "https://impacthub-hackathon.onrender.com/api/RaiseQuest/getAllRequest",
           {
             headers: { token: token },
           },

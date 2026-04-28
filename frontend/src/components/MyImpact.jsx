@@ -13,7 +13,7 @@ const MyImpact = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await axios.get(
-          "http://localhost:4000/api/RaiseQuest/GetMyAcceptedRequests",
+          "https://impacthub-hackathon.onrender.com/api/RaiseQuest/GetMyAcceptedRequests",
           {
             headers: { token },
           },

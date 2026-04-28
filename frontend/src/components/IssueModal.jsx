@@ -39,7 +39,7 @@ const IssueModal = ({ isOpen, onClose, onSuccess }) => {
       }
 
       const response = await axios.post(
-        "http://localhost:4000/api/RaiseQuest/addRequest",
+        "https://impacthub-hackathon.onrender.com/api/RaiseQuest/addRequest",
         submitData,
         {
           headers: { token: token },

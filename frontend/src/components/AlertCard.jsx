@@ -55,7 +55,7 @@ const AlertCard = ({
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        "http://localhost:4000/api/RaiseQuest/resolveRequest",
+        "https://impacthub-hackathon.onrender.com/api/RaiseQuest/resolveRequest",
         { id: id },
         { headers: { token } },
       );
@@ -78,7 +78,7 @@ const AlertCard = ({
       }
 
       const response = await axios.post(
-        "http://localhost:4000/api/RaiseQuest/AcceptRequest",
+        "https://impacthub-hackathon.onrender.com/api/RaiseQuest/AcceptRequest",
         { id: id },
         { headers: { token: token } },
       );

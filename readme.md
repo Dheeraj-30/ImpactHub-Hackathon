@@ -55,3 +55,4 @@ Because community crises happen on the ground, mobile accessibility is our immed
 * **📶 Offline-First Capabilities:** Enabling users to draft alert requests even when cellular networks go down during disasters, which will automatically sync the moment a signal is restored.
 
 
+---

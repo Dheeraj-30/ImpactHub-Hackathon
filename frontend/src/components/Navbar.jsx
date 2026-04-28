@@ -1,123 +1,60 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-const Navbar = ({
-  onOpenModal,
-  onOpenConnect,
-  onLogout,
-  setCurrentPage,
-  currentPage,
-}) => {
-  const [isProfileOpen, setIsProfileOpen] = useState(false);
-
-  const handleNavClick = (page) => {
-    setCurrentPage(page);
-    setIsProfileOpen(false);
-  };
+const Navbar = ({ onOpenModal, onOpenConnect, onLogout, setCurrentPage, currentPage }) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-sm sticky top-0 z-40">
-      <div className="w-full px-4 md:px-8 py-4 flex items-center justify-between">
-        <div className="select-none flex items-center gap-8">
-          <h1
-            className="text-xl font-bold text-gray-900 tracking-tight cursor-pointer"
-            onClick={() => handleNavClick("dashboard")}
-          >
-            ImpactHub
-          </h1>
-          <div className="hidden md:flex gap-6 text-sm font-medium text-gray-500">
-            <span
-              onClick={() => handleNavClick("dashboard")}
-              className={`cursor-pointer transition-colors ${currentPage === "dashboard" ? "text-gray-900 border-b-2 border-gray-900 pb-1 font-bold" : "hover:text-gray-900"}`}
-            >
-              Dashboard
-            </span>
-
-            <span
-              onClick={() => handleNavClick("my-impact")}
-              className={`cursor-pointer transition-colors ${currentPage === "my-impact" ? "text-gray-900 border-b-2 border-gray-900 pb-1 font-bold" : "hover:text-gray-900"}`}
-            >
-              My Impact
-            </span>
-
-            <div className="relative group flex items-center justify-center">
-              <span className="hover:text-gray-900 cursor-pointer transition-colors pb-1">
-                Partners
-              </span>
-
-              <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 w-max px-3 py-1.5 bg-gray-800 text-white text-[10px] font-bold rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all shadow-lg z-50">
-                v2 Roadmap: NGO & Corporate Partner Directory
-                <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"></div>
-              </div>
-            </div>
-
-            <div className="relative group flex items-center justify-center">
-              <span className="hover:text-gray-900 cursor-pointer transition-colors pb-1">
-                Resources
-              </span>
-
-              <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 w-max px-3 py-1.5 bg-gray-800 text-white text-[10px] font-bold rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all shadow-lg z-50">
-                v2 Roadmap: Emergency Response Knowledge Base
-                <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="select-none flex items-center gap-5">
-          <button
-            onClick={onOpenModal}
-            className="bg-red-600 text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-red-700 transition shadow-sm"
-          >
-            📢 Raise an Issue
-          </button>
-
-          <button
-            onClick={onOpenConnect}
-            className="bg-gray-900 text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-gray-800 transition shadow-sm hidden sm:block"
-          >
-            🤝 Connect Nearby
-          </button>
-
-          <div className="relative group cursor-pointer hover:bg-gray-100 p-2 rounded-full transition flex items-center justify-center">
-            <span className="text-xl">🔔</span>
-            <span className="absolute top-1 right-1 bg-red-600 text-white text-[10px] font-bold rounded-full h-4 w-4 flex items-center justify-center border-2 border-white">
-              3
-            </span>
-            <div className="absolute top-full mt-2 right-0 w-max px-3 py-1.5 bg-gray-800 text-white text-[10px] font-bold rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all shadow-lg z-50">
-              v2 Roadmap: Real-Time Push Notifications
-              <div className="absolute -top-1 right-4 w-2 h-2 bg-gray-800 rotate-45"></div>
-            </div>
+    <nav className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-40">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between h-16 items-center">
+          
+          <div className="flex items-center cursor-pointer" onClick={() => setCurrentPage('dashboard')}>
+            <span className="text-2xl mr-2">🌍</span>
+            <h1 className="text-xl font-black tracking-tight text-gray-900">
+              Impact<span className="text-red-600">Hub</span>
+            </h1>
           </div>
 
-          <div className="relative">
-            <div
-              onClick={() => setIsProfileOpen(!isProfileOpen)}
-              className="w-9 h-9 bg-orange-200 border-2 border-white shadow-sm rounded-full cursor-pointer flex items-center justify-center text-xl overflow-hidden"
-            >
-              👤
-            </div>
+          <div className="hidden md:flex items-center gap-4">
+            <button onClick={() => setCurrentPage('dashboard')} className={`font-semibold text-sm ${currentPage === 'dashboard' ? 'text-red-600' : 'text-gray-600 hover:text-gray-900'}`}>Dashboard</button>
+            <button onClick={() => setCurrentPage('myimpact')} className={`font-semibold text-sm ${currentPage === 'myimpact' ? 'text-red-600' : 'text-gray-600 hover:text-gray-900'}`}>My Impact</button>
+            
+            <div className="h-6 w-px bg-gray-300 mx-2"></div>
 
-            {isProfileOpen && (
-              <div className="absolute right-0 mt-3 w-48 bg-white border border-gray-100 rounded-xl shadow-lg py-1 z-50">
-                <button
-                  onClick={() => handleNavClick("my-impact")}
-                  className="w-full text-left px-4 py-2 text-sm font-bold text-gray-800 hover:bg-gray-50 transition"
-                >
-                  My Impact Dashboard
-                </button>
+            <button onClick={onOpenConnect} className="bg-gray-100 text-gray-900 text-sm font-bold px-4 py-2 rounded-lg hover:bg-gray-200 transition">
+              🤝 Connect Nearby
+            </button>
+            <button onClick={onOpenModal} className="bg-red-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-red-700 transition shadow-md shadow-red-600/20">
+              🚨 Raise Alert
+            </button>
+            <button onClick={onLogout} className="text-gray-500 hover:text-gray-800 font-medium text-sm ml-2">
+              Logout
+            </button>
+          </div>
 
-                <div className="border-t border-gray-100 my-1"></div>
-                <button
-                  onClick={onLogout}
-                  className="w-full text-left px-4 py-2 text-sm font-semibold text-red-600 hover:bg-red-50 transition"
-                >
-                  Log Out
-                </button>
-              </div>
-            )}
+          <div className="md:hidden flex items-center">
+            <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-gray-600 hover:text-gray-900 focus:outline-none">
+              <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                {isMobileMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
           </div>
         </div>
       </div>
+
+      {isMobileMenuOpen && (
+        <div className="md:hidden bg-white border-t border-gray-100 px-4 pt-2 pb-4 space-y-3 shadow-lg">
+          <button onClick={() => { setCurrentPage('dashboard'); setIsMobileMenuOpen(false); }} className="block w-full text-left font-semibold text-gray-700 py-2">Dashboard</button>
+          <button onClick={() => { setCurrentPage('myimpact'); setIsMobileMenuOpen(false); }} className="block w-full text-left font-semibold text-gray-700 py-2">My Impact</button>
+          <button onClick={() => { onOpenConnect(); setIsMobileMenuOpen(false); }} className="block w-full text-left text-gray-900 bg-gray-100 font-bold px-4 py-2 rounded-lg">🤝 Connect Nearby</button>
+          <button onClick={() => { onOpenModal(); setIsMobileMenuOpen(false); }} className="block w-full text-left text-white bg-red-600 font-bold px-4 py-2 rounded-lg shadow-md">🚨 Raise Alert</button>
+          <button onClick={onLogout} className="block w-full text-left text-gray-500 font-medium py-2">Logout</button>
+        </div>
+      )}
     </nav>
   );
 };

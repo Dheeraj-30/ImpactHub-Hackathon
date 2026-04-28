@@ -37,7 +37,7 @@ const registerUser = async (req, res) => {
       email: email,
       password: hashedPassword,
       Id_Proof: Id_Proof,
-      defaultLocation: defaultLocation || "",
+      location: req.body.location || "Not specified"
     });
 
     const user = await newUser.save();

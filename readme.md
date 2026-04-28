@@ -1,6 +1,7 @@
 # 🌍 ImpactHub: Real-Time Community Response Platform
 
-> **Empowering local communities to act fast during crises.** > Built for the community, powered by real-time connection.
+> **Empowering local communities to act fast during crises.**
+> Built for the community, powered by real-time connection.
 
 ![MERN Stack](https://img.shields.io/badge/Stack-MERN-blue?style=for-the-badge&logo=react)
 ![Tailwind CSS](https://img.shields.io/badge/Styling-Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css)
@@ -30,12 +31,28 @@ Whether it's severe waterlogging, a weekend food drive, or structural damage, Im
 * React.js (Vite)
 * Tailwind CSS (for rapid, responsive, and modern UI)
 * Axios (API Integration)
+* Hosted on **Vercel**
 
 **Backend:**
 * Node.js & Express.js
 * MongoDB & Mongoose (NoSQL Database)
 * JSON Web Tokens (JWT) for secure authentication
 * Multer (Image handling & storage)
+* Hosted on **Render**
+
+---
+
+## 🗺️ Current Scope & Future Roadmap
+
+**Phase 1: Web-Optimized Prototype (Current)**
+Currently, **ImpactHub** is deployed as a responsive web prototype. For this hackathon, our primary focus was engineering a robust, real-time backend, implementing secure authentication, and perfecting the geo-aware search algorithms. 
+
+**Phase 2: The Mobile Evolution (Next Steps)**
+Because community crises happen on the ground, mobile accessibility is our immediate next priority. Our roadmap includes:
+* **📱 Native App Launch:** Developing a dedicated mobile application (iOS & Android) to unlock advanced, life-saving features.
+* **🚨 Instant Push Notifications:** Bypassing the need to refresh a web page by sending immediate lock-screen alerts to nearby volunteers when a "Critical" event is raised.
+* **📍 Live GPS Tracking:** Allowing users to share live locations during emergency rescues to guide responders directly to them.
+* **📶 Offline-First Capabilities:** Enabling users to draft alert requests even when cellular networks go down during disasters, which will automatically sync the moment a signal is restored.
 
 ---
 

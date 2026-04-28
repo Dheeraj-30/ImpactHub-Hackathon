@@ -8,7 +8,7 @@ import { connectDB } from './config/db.js';
 import RaiseQuestRouter from './routes/RaiseQuestRouter.js';
 import NgoDetailRouter from './routes/NgoDetailRouter.js';
 import userRouter from './routes/userRoute.js';
-import cors from 'cors';
+
 
 const app = express();
 
